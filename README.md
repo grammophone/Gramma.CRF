@@ -11,3 +11,9 @@ robustness as described in Rabiner's
 (http://www.cs.cornell.edu/Courses/cs4758/2012sp/materials/hmm_paper_rabiner.pdf) with 
 corrections provided by Rahimi's ["An Erratum 
 for 'A Tutorial on Hidden Markov Models and Selected Applications in Speech Recognition'"](http://alumni.media.mit.edu/~rahimi/rabiner/rabiner-errata/rabiner-errata.html).
+
+This project relies on the following projects which must reside in sibling directories:
+* [Gramma.Caching](https://github.com/grammophone/Gramma.Caching)
+* [Gramma.GenericContentModel](https://github.com/grammophone/Gramma.GenericContentModel)
+* [Gramma.Vectors](https://github.com/grammophone/Gramma.Vectors)
+* [Gramma.Optimization](https://github.com/grammophone/Gramma.Optimization)
