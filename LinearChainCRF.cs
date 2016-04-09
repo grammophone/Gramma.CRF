@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Gramma.Optimization.QuasiNewton;
-using Gramma.Vectors;
+using Grammophone.Optimization.QuasiNewton;
+using Grammophone.Vectors;
 using System.Runtime.Serialization;
-using Gramma.GenericContentModel;
+using Grammophone.GenericContentModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Collections.Concurrent;
 
-namespace Gramma.CRF
+namespace Grammophone.CRF
 {
 	/// <summary>
 	/// Linear Chain Conditional Random Field. Must be subclassed for use.
@@ -648,7 +648,7 @@ namespace Gramma.CRF
 
 			/// <summary>
 			/// The optimizer to use.
-			/// Default is <see cref="Gramma.Optimization.QuasiNewton.ConjugateGradientOptimizer"/>.
+			/// Default is <see cref="Grammophone.Optimization.QuasiNewton.ConjugateGradientOptimizer"/>.
 			/// </summary>
 			public Optimizer Optimizer
 			{

@@ -8,8 +8,8 @@
     <ProjectGuid>{4959C391-BEA5-4DC4-AE66-4A14D044E2B6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gramma.CRF</RootNamespace>
-    <AssemblyName>Gramma.CRF</AssemblyName>
+    <RootNamespace>Grammophone.CRF</RootNamespace>
+    <AssemblyName>Grammophone.CRF</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -22,7 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Gramma.CRF.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\Grammophone.CRF.XML</DocumentationFile>
     <NoWarn>1591</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -33,7 +33,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Gramma.CRF.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Grammophone.CRF.XML</DocumentationFile>
     <NoWarn>1591</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -56,21 +56,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gramma.Caching\Gramma.Caching.csproj">
+    <ProjectReference Include="..\Grammophone.Caching\Grammophone.Caching.csproj">
       <Project>{2C834C5B-AA21-43FA-826E-398AB4DE25AC}</Project>
-      <Name>Gramma.Caching</Name>
+      <Name>Grammophone.Caching</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Gramma.GenericContentModel\Gramma.GenericContentModel.csproj">
+    <ProjectReference Include="..\Grammophone.GenericContentModel\Grammophone.GenericContentModel.csproj">
       <Project>{79D2D4C7-C8DE-4F11-93ED-AA4E4D2FC974}</Project>
-      <Name>Gramma.GenericContentModel</Name>
+      <Name>Grammophone.GenericContentModel</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Gramma.Optimization\Gramma.Optimization.csproj">
+    <ProjectReference Include="..\Grammophone.Optimization\Grammophone.Optimization.csproj">
       <Project>{A86E4DEA-C3E5-44F9-8975-B15E21F0E03A}</Project>
-      <Name>Gramma.Optimization</Name>
+      <Name>Grammophone.Optimization</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Gramma.Vectors\Gramma.Vectors.csproj">
+    <ProjectReference Include="..\Grammophone.Vectors\Grammophone.Vectors.csproj">
       <Project>{039DA284-52B0-4E55-917E-92F0CD3C5AD9}</Project>
-      <Name>Gramma.Vectors</Name>
+      <Name>Grammophone.Vectors</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

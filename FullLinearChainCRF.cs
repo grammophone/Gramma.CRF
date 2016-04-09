@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Gramma.Vectors;
+using Grammophone.Vectors;
 
-namespace Gramma.CRF
+namespace Grammophone.CRF
 {
 	/// <summary>
 	/// Linear Chain Conditional Random Field. Must be subclassed for use.

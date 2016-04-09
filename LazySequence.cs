@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Gramma.CRF
+namespace Grammophone.CRF
 {
 	/// <summary>
 	/// A lazy infinite sequence of items of type <typeparamref name="T"/>.

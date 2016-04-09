@@ -1,4 +1,4 @@
-﻿namespace Gramma.CRF
+﻿namespace Grammophone.CRF
 {
 	/// <summary>
 	/// This scope is hint during the creation of a <see cref="LinearChainCRF{I, T}.FeatureFunctionsProvider"/>

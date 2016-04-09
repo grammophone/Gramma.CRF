@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
-using Gramma.GenericContentModel;
-using Gramma.Vectors;
-using Gramma.Caching;
+using Grammophone.GenericContentModel;
+using Grammophone.Vectors;
+using Grammophone.Caching;
 
-namespace Gramma.CRF
+namespace Grammophone.CRF
 {
 	/// <summary>
 	/// Linear Chain Conditional Random Field. Must be subclassed for use.
