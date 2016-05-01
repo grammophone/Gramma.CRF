@@ -550,7 +550,7 @@ namespace Grammophone.CRF
 			}
 
 			/// <summary>
-			/// Compute p(y | x, w),
+			/// Compute log p(y | x, w),
 			/// which is the log-conditional-likelihood of the output sequence <paramref name="y"/>.
 			/// </summary>
 			/// <param name="y">The output sequence.</param>
