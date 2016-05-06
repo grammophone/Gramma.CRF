@@ -74,15 +74,6 @@ namespace Grammophone.CRF
 
 			private double[,] backwardVector;
 
-			/// <summary>
-			/// This is the array of scales for the forward and backward vectors.
-			/// This gets computed after the <see cref="ComputeForwardVector"/> method invokation.
-			/// </summary>
-			/// <remarks>
-			/// It is implied that c[-1] = 1 and c[|x|] = 1.
-			/// </remarks>
-			private double[] c;
-
 			#endregion
 
 			#region Construction
@@ -333,14 +324,14 @@ namespace Grammophone.CRF
 					E.AddInPlace(h(endTag, x, n).Scale(totalFactor));
 				}
 
-				return E.DivideInPlace(this.Z);
+				return E.DivideInPlace(this.ScaledZ);
 			}
 
 			// Use the method described in the paragraph "Using α and β" of 
 			// "An Erratum for 'A Tutorial on Hidden Markov Models and Selected Applications in Speech Recognition'"
 			// (http://alumni.media.mit.edu/~rahimi/rabiner/rabiner-errata/rabiner-errata.html).
 			// to compute Z from the scaling constants.
-			protected override double ComputePartitionFunction()
+			protected override double ComputeScaledPartitionFunction()
 			{
 				if (this.OutputLength == 0) return 1.0;
 

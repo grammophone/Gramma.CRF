@@ -344,7 +344,7 @@ namespace Grammophone.CRF
 		/// </summary>
 		public abstract class SequenceEvaluator
 		{
-			#region Private fields
+			#region Protected fields
 
 			/// <summary>
 			/// The special start tag, implied at position -1.
@@ -374,9 +374,32 @@ namespace Grammophone.CRF
 			// The input.
 			protected I x;
 
+			/// <summary>
+			/// This is the array of scales for the forward and backward vectors.
+			/// This gets computed after the ComputeForwardVector method of descendants is invoked.
+			/// </summary>
+			/// <remarks>
+			/// It is implied that c[-1] = 1 and c[|x|] = 1.
+			/// </remarks>
+			protected double[] c;
+
+			#endregion
+
+			#region Private fields
+
 			private T[] y;
 
 			private int outputLength;
+
+			/// <summary>
+			/// The cache for the computed scaled partition function. If not already computed, it is -1.
+			/// </summary>
+			private double scaledZ = -1.0;
+
+			/// <summary>
+			/// The cache for the computed partition function. If not already computed, it is -∞.
+			/// </summary>
+			private double logZ = Double.NegativeInfinity;
 
 			/// <summary>
 			/// The cache for the computed partition function. If not already computed, it is -1.
@@ -482,7 +505,33 @@ namespace Grammophone.CRF
 				get
 				{
 					if (this.z < 0.0) this.z = ComputePartitionFunction();
+
 					return this.z;
+				}
+			}
+
+			/// <summary>
+			/// The scaled partition function value, compatible with the scaling of the forward and backward vectors.
+			/// </summary>
+			public double ScaledZ
+			{
+				get
+				{
+					if (this.scaledZ < 0.0) this.scaledZ = ComputeScaledPartitionFunction();
+					return this.scaledZ;
+				}
+			}
+
+			/// <summary>
+			/// The logaritm of the partition function value, log(Z).
+			/// </summary>
+			public double LogZ
+			{
+				get
+				{
+					if (this.logZ == Double.NegativeInfinity) this.logZ = ComputeLogPartitionFunction();
+
+					return this.logZ;
 				}
 			}
 
@@ -565,7 +614,7 @@ namespace Grammophone.CRF
 
 				if (y.Length != outputLength) return Double.NegativeInfinity;
 
-				return w * ComputeF(y) - Math.Log(Z);
+				return w * ComputeF(y) - this.LogZ;
 			}
 
 			#endregion
@@ -582,7 +631,31 @@ namespace Grammophone.CRF
 
 			protected abstract IVector ComputeFeatureFunctionsExpectations();
 
-			protected abstract double ComputePartitionFunction();
+			protected abstract double ComputeScaledPartitionFunction();
+
+			#endregion
+
+			#region Private methods
+
+			private double ComputePartitionFunction()
+			{
+				return Math.Exp(this.LogZ);
+			}
+
+			private double ComputeLogPartitionFunction()
+			{
+				// This forces the c[] scaling constants to be computed as well.
+				double scaledZ = this.ScaledZ;
+
+				double log_C_nm1 = 0.0;
+
+				for (int i = 0; i < this.c.Length; i++)
+				{
+					log_C_nm1 += Math.Log(c[i]);
+				}
+
+				return Math.Log(scaledZ) - log_C_nm1;
+			}
 
 			#endregion
 		}
