@@ -7,8 +7,7 @@ In general, these implementations follow the notes of Charles Elkan's
 ["Log-Linear Models and Conditional Random Fields"](http://www.cs.columbia.edu/~smaskey/CS6998-0412/supportmaterial/cikmtutorial.pdf)
 with own corrections included, combined with forward and backward vectors scaling for arithmetic 
 robustness as described in Rabiner's 
-["A tutorial on hidden markov models and selected apllications in speech recognition"]
-(http://www.cs.cornell.edu/Courses/cs4758/2012sp/materials/hmm_paper_rabiner.pdf) with 
+["A tutorial on hidden markov models and selected apllications in speech recognition"](http://www.cs.cornell.edu/Courses/cs4758/2012sp/materials/hmm_paper_rabiner.pdf) with 
 corrections provided by Rahimi's ["An Erratum 
 for 'A Tutorial on Hidden Markov Models and Selected Applications in Speech Recognition'"](http://alumni.media.mit.edu/~rahimi/rabiner/rabiner-errata/rabiner-errata.html).
 
